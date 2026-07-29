@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: model-artifacts-{{ matrix.python-version}}-${{ github.run_id}}
+          name: model-artifacts-{{ matrix.python-version }}-${{ github.run_id }}
           path: artifacts
       
 
