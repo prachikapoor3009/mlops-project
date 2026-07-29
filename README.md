@@ -2,6 +2,8 @@
 
 This repository contains the code and configuration for the MLOps project.
 
+# Continuous Training Process 
+
 ## Screenshot
 
 ![Training summary screenshot](image.png)
@@ -18,7 +20,8 @@ It does the following:
 - installs dependencies from `requirements.txt`
 - runs `python train.py` to train and save the model
 - lists the `artifacts` folder contents for debugging
-- uploads the `artifacts` folder as a workflow artifact named `model-artifacts-<python-version>-<run_id>`
+- uploads the `artifacts` folder as a workflow artifact named `model-artifacts-${{ matrix.python-version }}-${{ github.run_id }}`
+  - example: `model-artifacts-3.11-30417194756`
 
 This ensures the model training pipeline can be validated automatically on supported Python versions.
 
